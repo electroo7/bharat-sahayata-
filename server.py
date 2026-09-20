@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FRONTEND_DIR = os.path.join(BASE_DIR, "bharat-sahayata")
+FRONTEND_DIR = BASE_DIR if os.path.exists(os.path.join(BASE_DIR, "index.html")) else os.path.join(BASE_DIR, "bharat-sahayata")
 
 app = Flask(__name__, static_folder=FRONTEND_DIR)
 
